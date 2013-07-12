@@ -1,0 +1,16 @@
+Zdanie "Silnia" - UMCS
+
+Zadanie ma na celu
+* u³atwiæ zrozumienie polimorfizmu
+* pokazaæ obszar zastosowañ BigDecimal i Long
+* zaprezentowaæ przyk³adow¹ implementacjê rekrurencji
+* zaznajomiæ z podstawami Mavena (dodawanie bibliotek)
+* zapoznaæ z podstawowymi technikami testów jednostkowych (JUnit)
+* zapoznaæ podstawami systemu wersjonowania GIT
+
+
+Wymagamy by kod spe³nia³ regu³y CleanCode
+
+
+Bibliografia - Thining in Java, CleanCode
+
