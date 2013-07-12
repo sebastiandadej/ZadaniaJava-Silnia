@@ -1,27 +1,16 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package marcin.testapp.impl;
 
 import marcin.testapp.KalkulatorSilni;
 
 
-/**
- *
- * @author mgr
- */
 public class OptymalnaSilnia implements KalkulatorSilni{
     
     private static int MAKSYMALNY_ARGUMENT_DLA_LONG=12;
     
     public String licz(int podstawa){
-        KalkulatorSilni i;
-        if(podstawa>MAKSYMALNY_ARGUMENT_DLA_LONG) {
-            i=new BigDecimalSilnia();
-        } else {
-            i=new SzybkaSilnia();
-        }
+        KalkulatorSilni i=null;
+        //w zależności od rozmiaru argumentu powinniśmy użyć algorytmu SzybkaSilnia lub BigDecimalSilnia
+        //TODO - zaimplementować to tutaj.
         return i.licz(podstawa);
     }
 }

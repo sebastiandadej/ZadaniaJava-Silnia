@@ -4,9 +4,9 @@
  */
 package marcin.testapp.impl;
 
-import com.google.common.math.BigIntegerMath;
 import marcin.testapp.KalkulatorSilni;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 
 /**
  *
@@ -15,7 +15,17 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public class GuavaSilnia implements KalkulatorSilni{
 
     public String licz(int arg) {
-        return BigIntegerMath.factorial(arg).toString();
+        //return BigIntegerMath.factorial(arg).toString();
+        /*
+         * żeby użyć biblioteki Guava do liczenia silni wystarczy dodać
+         *     <dependency>
+         *       <groupId>com.google.guava</groupId>
+         *       <artifactId>guava</artifactId>
+         *       <version>14.0.1</version>
+         *       <type>jar</type>
+         *     </dependency>
+         */
+        throw new NotImplementedException();
     }
     
 }

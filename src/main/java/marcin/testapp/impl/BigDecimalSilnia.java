@@ -3,22 +3,20 @@ package marcin.testapp.impl;
 import java.math.BigDecimal;
 import lombok.extern.slf4j.Slf4j;
 import marcin.testapp.KalkulatorSilni;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  *
- * @author mgr
+ * @author Marcin Grabowiecki
+ * 
+ * proszę zaimplementować algorytm analogiczny jak dla SzybkaSilnia
+ * jednak należy się oprzeć na na typie BigDecimal
+ * 
  */
-@Slf4j
-public class BigDecimalSilnia implements KalkulatorSilni{
-    public BigDecimal licz(BigDecimal podstawa){
-        if(podstawa.compareTo(BigDecimal.ZERO)<0) throw new ArithmeticException("podstawa silni nie może być mniejsza od zera");
-        if(podstawa.compareTo(BigDecimal.ZERO)>0) {
-            return podstawa.multiply(licz(podstawa.subtract(BigDecimal.valueOf(1))));
-        }
-        return BigDecimal.ONE;
-    }
 
+public class BigDecimalSilnia implements KalkulatorSilni{
     public String licz(int arg) {
-        return licz(BigDecimal.valueOf(arg)).toString();
+        //throw new NotImplementedException("nie zaimplementowane");
+        return ""+arg;
     }
 }

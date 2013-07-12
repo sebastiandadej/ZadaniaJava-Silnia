@@ -8,5 +8,5 @@ package marcin.testapp;
  * @author mgr
  */
 public interface KalkulatorSilni {
-    public String licz(int arg);
+    public String licz(int arg) throws ArithmeticException;
 }
