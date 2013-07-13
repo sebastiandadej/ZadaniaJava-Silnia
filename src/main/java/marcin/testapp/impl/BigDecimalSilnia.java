@@ -1,7 +1,5 @@
 package marcin.testapp.impl;
 
-import java.math.BigDecimal;
-import lombok.extern.slf4j.Slf4j;
 import marcin.testapp.KalkulatorSilni;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -16,7 +14,6 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class BigDecimalSilnia implements KalkulatorSilni{
     public String licz(int arg) {
-        //throw new NotImplementedException("nie zaimplementowane");
-        return ""+arg;
+        throw new NotImplementedException();
     }
 }

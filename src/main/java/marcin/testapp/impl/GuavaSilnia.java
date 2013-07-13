@@ -27,5 +27,4 @@ public class GuavaSilnia implements KalkulatorSilni{
          */
         throw new NotImplementedException();
     }
-    
 }
