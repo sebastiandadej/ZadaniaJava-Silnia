@@ -24,7 +24,9 @@ public class GuavaSilnia implements KalkulatorSilni{
          *       <version>14.0.1</version>
          *       <type>jar</type>
          *     </dependency>
+         * do pliku pom.xml
          */
         throw new NotImplementedException();
+        
     }
 }
