@@ -15,8 +15,11 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public class GuavaSilnia implements KalkulatorSilni{
 
     public String licz(int arg) {
+        
         //return BigIntegerMath.factorial(arg).toString();
+        
         /*
+         * 
          * żeby użyć biblioteki Guava do liczenia silni wystarczy dodać
          *     <dependency>
          *       <groupId>com.google.guava</groupId>
@@ -25,6 +28,7 @@ public class GuavaSilnia implements KalkulatorSilni{
          *       <type>jar</type>
          *     </dependency>
          * do pliku pom.xml
+         * 
          */
         throw new NotImplementedException();
         
