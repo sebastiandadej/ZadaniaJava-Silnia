@@ -25,38 +25,16 @@ import org.junit.runners.MethodSorters;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SilniaTest {
-
-    private KalkulatorSilni szybkaSilnia;
-    private KalkulatorSilni optymalnaSilnia;
-    private KalkulatorSilni duzaSilnia;
-    private KalkulatorSilni nierekSilnia;
-    private KalkulatorSilni guavaSilnia;
-    private KalkulatorSilni[]wszytkieKalkulatory;
-    
-    
-    
-    @Before
-    public void przypiszKalkulatory(){
-        szybkaSilnia = new SzybkiKalkulatorSilni();
-        optymalnaSilnia = new OptymalnyKalkulatorSilni();
-        duzaSilnia = new KalkulatorSilniBigDecimal();
-        nierekSilnia = new KalkulatorSilniNieRekursywny();
-        guavaSilnia = new KalkulatorSilniGuava();
-        wszytkieKalkulatory=new KalkulatorSilni[4];
-        wszytkieKalkulatory[0]=szybkaSilnia;
-        wszytkieKalkulatory[1]=optymalnaSilnia;
-        wszytkieKalkulatory[2]=duzaSilnia;
-        wszytkieKalkulatory[3]=nierekSilnia;    	
-    }
-    
-    
-    //to jest prosty test, który sprawdza implementację dostarczonego algorytmu, który liczy opierając się na typach long
+	
+    // to jest prosty test, który sprawdza implementację dostarczonego algorytmu,
+    // liczącego w oparciu o typy long
     @Test
-    public void t001PodstawowyTest(){
+    public void t001PodstawowaImplementacjaPowinnaPoprawnieLiczycSilnie(){
         //given
-            int silnia=10;
+    		final KalkulatorSilni kalkulatorSilni=new SzybkiKalkulatorSilni(); 
+            final int silnia=10;
         //when
-            String wynik=szybkaSilnia.licz(silnia);
+            String wynik=kalkulatorSilni.licz(silnia);
         //then
             Assert.assertEquals("3628800",wynik);
     }
@@ -71,28 +49,28 @@ public class SilniaTest {
      */
     
     @Test(expected = ArithmeticException.class)
-    public void t002ArgumentyUjemne(){
+    public void t002ArgumentyUjemnePowinnyWyrzucacWyjatek(){
         //given
-            int silnia=-1;
+    		final KalkulatorSilni kalkulatorSilni=new SzybkiKalkulatorSilni();
+            final int silnia=-1;
         //when
-            String wynik=szybkaSilnia.licz(silnia);
+            String wynik=kalkulatorSilni.licz(silnia);
         //then
             Assert.fail();
     }    
     
     /*
-     * 
      * drugie zadanie - zaimplementować metodę licz w KalkulatorzeSilnikBigDecimal
-     * tak by do jej liczenia były używane BigDecimal-e
-     * 
+     * tak by do jej liczenia były używane BigDecimal-e 
      */
     
     @Test
-    public void t003DuzeArgumenty(){
+    public void t003KalkulatorPowinienLiczycPoprawnieDlaDuzychArgumentow(){
         //given
-            int silnia=50;
+    		final KalkulatorSilni kalkulatorSilni=new KalkulatorSilniBigDecimal();
+    		final int silnia=50;
         //when
-            String wynik=duzaSilnia.licz(silnia);
+            String wynik=kalkulatorSilni.licz(silnia);
         //then
             //w teście sprawdzam tylko pierwsze 10 cyfr
             Assert.assertEquals(wynik.substring(0,10), "3041409320");
@@ -100,50 +78,51 @@ public class SilniaTest {
 
     
      /*
-     * 
      * Zaimplementować algorytm w OptymalnymKalkulatorzeSilni tak, by algorytm automatycznie rozpoznawał
      * czy do liczenia użyć Szybkiej silni (małe argumenty) czy BigDecimalSilnia
      * (dla dużych argumentów)
-     * 
      */
     
     @Test
     public void t004OptymalnaSilnia(){
         //given
-            int silnia=50;
+    		final KalkulatorSilni kalkulatorSilni=new OptymalnyKalkulatorSilni();
+    		final int silnia=50;
         //when
-            String wynik=optymalnaSilnia.licz(silnia);
+            String wynik=kalkulatorSilni.licz(silnia);
         //then
             Assert.assertEquals(wynik.substring(0,10), "3041409320");
     }
 
     
-     /*
-     * 
+     /* 
      * Czasem zamiast odrywać Amerykę na nowo wystarczy poszukać dobrej biblioteki
      * zmodyfikuj pom.xml i zmodyfikuj GuavaSilnia tak by test kończył się sukcesem
-     * 
      */
     
     @Test
-    public void t005BibliotekaGuava(){
+    public void t005KalkulatorGuavaPowinienZwracacPoprawnyWynik(){
         //given
-            int silnia=50;
+    		final KalkulatorSilni kalkulatorSilni=new KalkulatorSilniGuava();
+            final int silnia=50;
         //when
-            String wynik=optymalnaSilnia.licz(silnia);
+            String wynik=kalkulatorSilni.licz(silnia);
         //then
             Assert.assertEquals(wynik.substring(0,10), "3041409320");
     }
     
     
-    
-    //test wszystkich algorytmów
+    //test wszystkich algorytmów liczenia silni
 
     @Test
-    public void t007Wszystkie(){
-        for(KalkulatorSilni kalkulator:wszytkieKalkulatory){
+    public void t007WszystkieKalkulatorySilniPowinnyZwracacTenSamWynik(){
         //given
-            int silnia=9;
+    		KalkulatorSilni[]wszytkieKalkulatory={
+    				new SzybkiKalkulatorSilni()
+    		};
+            final int silnia=9;
+        
+        for(KalkulatorSilni kalkulator:wszytkieKalkulatory){
         //when
             String wynik=kalkulator.licz(silnia);
         //then
