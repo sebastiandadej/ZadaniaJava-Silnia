@@ -1,7 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @author Marcin Grabowiecki
  */
+
+
 package marcin.silnia;
 
 
@@ -100,7 +101,7 @@ public class SilniaTest {
     
      /*
      * 
-     * Zaimplementować OptymalnąSilnie tak, by algorytm automatycznie rozpoznawał
+     * Zaimplementować algorytm w OptymalnymKalkulatorzeSilni tak, by algorytm automatycznie rozpoznawał
      * czy do liczenia użyć Szybkiej silni (małe argumenty) czy BigDecimalSilnia
      * (dla dużych argumentów)
      * 
