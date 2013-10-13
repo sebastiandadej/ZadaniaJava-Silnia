@@ -1,12 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package javahive.util;
 
 /**
- *
- * @author mgr
+ * @author Marcin Grabowiecki
+ * zlicza czas wykonania kodu
  */
 public abstract class Runner<T> {
     private long start=System.nanoTime();
