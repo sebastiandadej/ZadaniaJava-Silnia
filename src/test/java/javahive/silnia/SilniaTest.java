@@ -126,6 +126,13 @@ public class SilniaTest {
         //then
             Assert.assertEquals("362880", wynik);
         }
-    }            
+    }
+    
+    @Test
+    public void t008WszystkieKalkulatorySilniPowinnyLiczycZero(){
+    	//TODO napisać test który sprawdzi czy wszystkie kalkulatory liczą 0!
+    	Assert.fail();
+    }
+    
 
 }
