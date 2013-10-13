@@ -1,27 +1,21 @@
-/**
- * @author Marcin Grabowiecki
- */
-
-
 package marcin.silnia;
 
 
 import javahive.silnia.KalkulatorSilni;
 import javahive.silnia.impl.KalkulatorSilniGuava;
 import javahive.silnia.impl.KalkulatorSilniBigDecimal;
-import javahive.silnia.impl.KalkulatorSilniNieRekursywny;
+import javahive.silnia.impl.KalkulatorSilniNieRekurencyjny;
 import javahive.silnia.impl.OptymalnyKalkulatorSilni;
 import javahive.silnia.impl.SzybkiKalkulatorSilni;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 /**
  *
- * @author mgr
+ * @author Marcin Grabowiecki
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SilniaTest {
@@ -84,7 +78,7 @@ public class SilniaTest {
      */
     
     @Test
-    public void t004OptymalnaSilnia(){
+    public void t004KalkulatorOptymalnejSilniPowinienPoprawnieLiczyc(){
         //given
     		final KalkulatorSilni kalkulatorSilni=new OptymalnyKalkulatorSilni();
     		final int silnia=50;
@@ -118,7 +112,11 @@ public class SilniaTest {
     public void t007WszystkieKalkulatorySilniPowinnyZwracacTenSamWynik(){
         //given
     		KalkulatorSilni[]wszytkieKalkulatory={
-    				new SzybkiKalkulatorSilni()
+    				new SzybkiKalkulatorSilni(),
+    				new OptymalnyKalkulatorSilni(),
+    				new KalkulatorSilniGuava(),
+    				new KalkulatorSilniBigDecimal(),
+    				new KalkulatorSilniNieRekurencyjny()
     		};
             final int silnia=9;
         
