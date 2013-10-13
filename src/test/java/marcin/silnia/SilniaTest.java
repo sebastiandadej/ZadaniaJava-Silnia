@@ -13,6 +13,7 @@ import javahive.silnia.impl.OptymalnyKalkulatorSilni;
 import javahive.silnia.impl.SzybkiKalkulatorSilni;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -31,7 +32,10 @@ public class SilniaTest {
     private KalkulatorSilni guavaSilnia;
     private KalkulatorSilni[]wszytkieKalkulatory;
     
-    public SilniaTest(){
+    
+    
+    @Before
+    public void przypiszKalkulatory(){
         szybkaSilnia = new SzybkiKalkulatorSilni();
         optymalnaSilnia = new OptymalnyKalkulatorSilni();
         duzaSilnia = new KalkulatorSilniBigDecimal();
@@ -41,7 +45,7 @@ public class SilniaTest {
         wszytkieKalkulatory[0]=szybkaSilnia;
         wszytkieKalkulatory[1]=optymalnaSilnia;
         wszytkieKalkulatory[2]=duzaSilnia;
-        wszytkieKalkulatory[3]=nierekSilnia;
+        wszytkieKalkulatory[3]=nierekSilnia;    	
     }
     
     
@@ -59,7 +63,7 @@ public class SilniaTest {
     /*
      * test warunku brzegowego - liczby ujemne
      * 
-     * pierwsze zdanie - uzupełnić algorytm w SzybkaSilnia o wykrywanie czy argument
+     * pierwsze zdanie - uzupełnić algorytm w klasie SzybkiKalkulatorSilni o wykrywanie czy argument
      * nie jest ujemny. Jeśli jest - należy zwrócić wyjątek
      * Jak widać - test oczekuje że pojawi się wyjątek
      * 
@@ -77,7 +81,7 @@ public class SilniaTest {
     
     /*
      * 
-     * drugie zadanie - zaimplementować metodę licz w BigDecimalSilnia
+     * drugie zadanie - zaimplementować metodę licz w KalkulatorzeSilnikBigDecimal
      * tak by do jej liczenia były używane BigDecimal-e
      * 
      */
