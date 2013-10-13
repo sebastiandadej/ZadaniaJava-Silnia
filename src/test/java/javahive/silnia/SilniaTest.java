@@ -1,4 +1,4 @@
-package marcin.silnia;
+package javahive.silnia;
 
 
 import javahive.silnia.KalkulatorSilni;
