@@ -12,7 +12,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  *
  * @author mgr
  */
-public class GuavaSilnia implements KalkulatorSilni{
+public class KalkulatorSilniGuava implements KalkulatorSilni{
 
     public String licz(int arg) {
         

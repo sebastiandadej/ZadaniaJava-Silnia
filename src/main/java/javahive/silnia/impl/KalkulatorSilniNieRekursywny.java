@@ -12,7 +12,7 @@ import javahive.silnia.KalkulatorSilni;
  *
  * @author mgr
  */
-public class NieRekursywnaSilnia implements KalkulatorSilni {
+public class KalkulatorSilniNieRekursywny implements KalkulatorSilni {
 
     public BigDecimal liczB(int podstawa) {
         if (podstawa < 0) {

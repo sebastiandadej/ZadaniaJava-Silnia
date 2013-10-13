@@ -5,7 +5,7 @@ import javahive.silnia.KalkulatorSilni;
 
 
 
-public class OptymalnaSilnia implements KalkulatorSilni{
+public class OptymalnyKalkulatorSilni implements KalkulatorSilni{
     
     private static int MAKSYMALNY_ARGUMENT_DLA_LONG=12;
     

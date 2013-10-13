@@ -6,11 +6,11 @@ package marcin.silnia;
 
 
 import javahive.silnia.KalkulatorSilni;
-import javahive.silnia.impl.GuavaSilnia;
+import javahive.silnia.impl.KalkulatorSilniGuava;
 import javahive.silnia.impl.KalkulatorSilniBigDecimal;
-import javahive.silnia.impl.NieRekursywnaSilnia;
-import javahive.silnia.impl.OptymalnaSilnia;
-import javahive.silnia.impl.SzybkaSilnia;
+import javahive.silnia.impl.KalkulatorSilniNieRekursywny;
+import javahive.silnia.impl.OptymalnyKalkulatorSilni;
+import javahive.silnia.impl.SzybkiKalkulatorSilni;
 
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
@@ -32,11 +32,11 @@ public class SilniaTest {
     private KalkulatorSilni[]wszytkieKalkulatory;
     
     public SilniaTest(){
-        szybkaSilnia = new SzybkaSilnia();
-        optymalnaSilnia = new OptymalnaSilnia();
+        szybkaSilnia = new SzybkiKalkulatorSilni();
+        optymalnaSilnia = new OptymalnyKalkulatorSilni();
         duzaSilnia = new KalkulatorSilniBigDecimal();
-        nierekSilnia = new NieRekursywnaSilnia();
-        guavaSilnia = new GuavaSilnia();
+        nierekSilnia = new KalkulatorSilniNieRekursywny();
+        guavaSilnia = new KalkulatorSilniGuava();
         wszytkieKalkulatory=new KalkulatorSilni[4];
         wszytkieKalkulatory[0]=szybkaSilnia;
         wszytkieKalkulatory[1]=optymalnaSilnia;
