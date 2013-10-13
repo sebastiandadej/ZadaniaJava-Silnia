@@ -5,7 +5,7 @@
 package javahive.silnia;
 /**
  *
- * @author mgr
+ * @author Marcin Grabowiecki
  */
 public interface KalkulatorSilni {
     public String licz(int arg) throws ArithmeticException;
