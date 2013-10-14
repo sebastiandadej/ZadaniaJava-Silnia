@@ -4,8 +4,8 @@
  */
 package javahive.silnia;
 /**
- * uwaga - test gita
- * @author Marcin Grabowiecki
+ * uwaga - test gita rretreter
+ * @author Marcin Grabowiecki gregfdgdf
  */
 
 public interface KalkulatorSilni {
